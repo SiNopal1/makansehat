@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kantin Sehat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        .opensans {
+            font-family: 'Open Sans', cursive;
+            font-weight: 700;
+            /* You can change this value to 500, 600 or 700 */
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        .animate-right {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.5s ease-out;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .button {
+            /* Adding the rounded corners */
+            border-radius: 10px;
+            border: none;
+            width: 100%;
+            /* set a fixed width for the button */
+            padding: 20px;
+            /* adjust the font size */
+            background: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            /* Set the height of the container to the viewport height */
+        }
+
+        .small {
+            font-size: 0.5em;
+            color: #333;
+        }
+
+        .divider {
+            margin: 50px 0;
+        }
+
+        .divider2 {
+            margin: 20px 0;
+        }
+
+        .justify {
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .padding {
+            height: 250px;
+            /* ubah ukuran ini sesuai kebutuhan Anda */
+            overflow: hidden;
+            /* mengatur justifikasi teks pada div */
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            padding: 1rem;
+        }
+
+        li {
+            inline-size: 90%;
+            overflow-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="button opensans animate-right fade-in" id="1">
+        REFERENSI YANG KAMI GUNAKAN
+    </button>
+    <div class="divider2"></div>
+    <ul>
+        <li>https://www.statista.com/statistics/829732/global-population-by-age/</li>
+        <li>https://www.who.int/multi-media/details/double-burden-of-malnutrition</li>
+        <li>https://ejournal.unesa.ac.id/index.php/jurnal-tata-boga/article/view/38402</li>
+        <li>https://www.cbsnews.com/news/which-countries-most-walking-least-walking/</li>
+        <li>https://books.google.co.id/books?hl=id&lr=&id=U1Y5EAAAQBAJ&oi=fnd&pg=PA1&dq=info:m1Y2gyIfZ2IJ:scholar.google.com/&ots=UyykOpMVbz&sig=-VEYi52boO6sv1l91-thWswkaW0&redir_esc=y#v=onepage&q&f=false</li>
+        <li>https://www.ejurnal.poltekkes-tjk.ac.id/index.php/JKEP/article/view/924/702</li>
+        <li>https://ejournal3.undip.ac.id/index.php/empati/article/view/7361</li>
+        <li>https://evafitrina.blogspot.com/2009/10/dampak-underweight.html</li>
+    </ul>
+    <script>
+        const elements = document.querySelectorAll('.animate-right, .fade-in');
+
+        let delay = 0;
+
+        elements.forEach(element => {
+            setTimeout(() => {
+                element.style.opacity = 1;
+                element.style.transform = 'translateX(0)';
+            }, delay);
+            delay += 500;
+        });
+    </script>
+
+</body>
+
+</html>

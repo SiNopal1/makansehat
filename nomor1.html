@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Makanan Sehat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap.css">
+
+    <style>
+        .opensans {
+            font-family: 'Open Sans', cursive;
+            font-weight: 700;
+            /* You can change this value to 500, 600 or 700 */
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        .animate-right {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.5s ease-out;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .button {
+            /* Adding the rounded corners */
+            border-radius: 10px;
+            border: none;
+            width: 100%;
+            /* set a fixed width for the button */
+            padding: 20px;
+            /* adjust the font size */
+            background: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            /* Set the height of the container to the viewport height */
+        }
+
+        .small {
+            font-size: 0.5em;
+            color: #333;
+        }
+
+        .divider {
+            margin: 50px 0;
+        }
+
+        .divider2 {
+            margin: 20px 0;
+        }
+
+        .justify {
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .padding {
+            height: 250px;
+            /* ubah ukuran ini sesuai kebutuhan Anda */
+            overflow: hidden;
+            /* mengatur justifikasi teks pada div */
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <button class="button opensans animate-right fade-in" id="1">
+            Tahukah Kamu?
+        </button>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <img src="aset/top-arrow.png" alt="" height="50" width="50" onclick="up()">
+        <div class="divider2"></div>
+        <div class="opensans justify padding" id="changeable">86,2% orang yang memiliki pola makan buruk juga mengalami
+            hipertensi</div>
+        <div class="divider2"></div>
+        <img src="aset/down-arrow.png" alt="" height="50" width="50" onclick="down()">
+        <div class="divider2"></div>
+        <img src="aset/1.png" alt="" height="150" id="gambaran">
+        <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="15" aria-valuemin="0"
+              aria-valuemax="100" id="proses1"></div>
+            <div class="progress-bar bg-black" role="progressbar" style="width: 100%;" aria-valuenow="30" aria-valuemin="0"
+              aria-valuemax="100" id="proses2"></div>
+        </div>
+    </center>
+    <script>
+        const elements = document.querySelectorAll('.animate-right, .fade-in');
+        const change = document.getElementById("changeable")
+        const gambaran = document.getElementById("gambaran")
+        const progressBar1 = document.getElementById("proses1");
+        const progressBar2 = document.getElementById("proses2");
+        const fakta = [
+            {
+                "Fakta": "86,2% orang yang memiliki pola makan buruk juga mengalami hipertensi"
+            },
+            {
+                "Fakta": "73,7% orang yang memiliki pola makan buruk juga mengalami gastritis"
+            },
+            {
+                "Fakta": "Mayoritas pelajar makan sarapan sehat dan seimbang"
+            },
+            {
+                "Fakta": "Namun hanya sebagian yang makan siang dan malam sehat dan seimbang"
+            },
+            {
+                "Fakta": "33,9% Penduduk dunia memiliki berat badan berlebih"
+            },
+            {
+                "Fakta": "Lebih dari 10,7% Penduduk dunia mengidap obesitas"
+            },
+            {
+                "Fakta": "Obesitas dapat meningkatkan risiko hipertensi, gangguan pernafasan, diabetes, gangguan tidur, kolesterol tinggi, serta kanker"
+            },
+            {
+                "Fakta": "8,2% Penduduk dunia kekurangan berat badan (underweight)"
+            },
+            {
+                "Fakta": "Underweight menyebabkan kehilangan massa otot, rambut rontok, regulasi hormon yang tidak teratur, dan kelelahan"
+            },
+            {
+                "Fakta": "Untuk itu, marilah kita mengisi piring dengan makanan bergizi dan seimbang!"
+            }
+        ]
+
+        let value = 0;
+        let delay = 0;
+        let width = 0;
+
+        elements.forEach(element => {
+            setTimeout(() => {
+                element.style.opacity = 1;
+                element.style.transform = 'translateX(0)';
+            }, delay);
+            delay += 500;
+        });
+
+        function up() {
+            if (value >= 1) {
+                value -= 1
+                progressBar1.style.width = (100/9)*value + "%";
+                progressBar2.style.width = 100 - ((100/9)*value) + "%";
+            }
+
+            change.innerHTML = fakta[value]["Fakta"]
+            gambaran.src = `aset/${value+1}.png`
+            console.log("Value = " + value)
+        }
+
+        function down() {
+            if (value <= 8) {
+                value += 1
+                progressBar1.style.width = (100/9)*value + "%";
+                progressBar2.style.width = 100 - ((100/9)*value) + "%";
+            }
+
+            change.innerHTML = fakta[value]["Fakta"]
+            gambaran.src = `aset/${value+1}.png`
+            console.log("Value = " + value)
+        }
+    </script>
+</body>
+
+</html>
+</div>

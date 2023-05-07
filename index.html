@@ -5,19 +5,101 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kantin Sehat</title>
-  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap.css">
   <style>
     body {
-      margin: 1rem
+      background-color: #000;
+    }
+    .parent-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* just to make the container visible */
+      height: 100vh;
+      /* set the height of the parent container to the full viewport height */
+
+    }
+
+    .centered-div {
+      width: 80%;
+      padding: 20px;
+      color: white;
+      line-height: 1rem;
+    }
+
+    @keyframes move-up-and-fade {
+      0% {
+        top: 0;
+        opacity: 1;
+      }
+      1% {
+        top: -100px;
+        opacity: 0;
+      }
+      100%{
+        top: -100px;
+        opacity: 0;
+      }
+    }
+
+    .move-up-and-fade {
+      position: relative;
+      animation-name: move-up-and-fade;
+      animation-duration: 100s;
+    }
+
+    .line-height {
+      line-height: 1.5rem;
     }
   </style>
 </head>
 
 <body>
-  <center>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1QD115qLkeOdBqYKnZkj1y?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    <b><h1>Will be available soon!</h1></b>
-  </center>
+  <div class="parent-container", id="tujuan">
+    <div class="centered-div">
+      <p class="lead line-height">Atas nama Artenerty, situs ini kami hadirkan!</p>
+
+      <div class="progress">
+        <div class="progress-bar bg-light" role="progressbar" style="width: 0%;" aria-valuenow="15" aria-valuemin="0"
+          aria-valuemax="100" id="proses1"></div>
+        <div class="progress-bar bg-black" role="progressbar" style="width: 100%;" aria-valuenow="30" aria-valuemin="0"
+          aria-valuemax="100" id="proses2"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const progressBar1 = document.getElementById("proses1");
+    const progressBar2 = document.getElementById("proses2");
+    const tujuan = document.getElementById("tujuan");
+
+    let width1 = 0;
+    let width2 = 100;
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    function pindah(){
+      tujuan.classList.add("move-up-and-fade")
+      window.location.href = "project.html"
+    }
+
+    async function updateWidth() {
+      if (width1 >= 100) {
+        await sleep(1000)
+        pindah()
+        return;
+      }
+      width1 += 1;
+      width2 -= 1;
+      progressBar1.style.width = width1 + "%";
+      progressBar2.style.width = width2 + "%";
+    }
+
+    const intervalId = setInterval(updateWidth, 20);
+
+  </script>
 </body>
 
 </html>

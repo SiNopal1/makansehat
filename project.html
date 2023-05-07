@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Makanan Sehat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fff;
+      margin: 2rem;
+    }
+
+    .opensans {
+      font-family: 'Open Sans', cursive;
+      font-weight: 700;
+      /* You can change this value to 500, 600 or 700 */
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .opensans hr {
+      width: 95%;
+      height: 5px;
+      background-color: black;
+      border: none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .size1 {
+      font-size: 0.8em;
+      text-align: left;
+    }
+
+    .size2 {
+      font-size: 1.6em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .animate-right {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 0.5s ease-out;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+    }
+
+    .button {
+      /* Adding the rounded corners */
+      border-radius: 10px;
+      border: none;
+      width: 100%;
+      /* set a fixed width for the button */
+      padding: 20px;
+      /* adjust the font size */
+      background: black;
+      color: white;
+      cursor: pointer;
+    }
+
+    .divider {
+      margin: 20px 0;
+    }
+
+    .green {
+      color: #82cd47
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      /* Set the height of the container to the viewport height */
+    }
+
+    /* .center>* {
+      margin-top: auto;
+    } */
+
+    .small {
+      font-size: 0.5em;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="center">
+    <center>
+      <b>
+        <h1 class="text-black opensans">
+          <div>
+            MAU HIDUP SEHAT?
+          </div>
+          <hr>
+          </p>
+      </b>
+      <button class="button opensans animate-right fade-in" id="1" onclick="nomor1()">
+        <div style="display: flex;">
+          <div style="width: 25%; align-items: center; margin-right: 10px;" class="size2">01</div>
+          <div style="width: 75%; margin-left: 10px;" class="size1">
+            MENGAMATI
+            <span class="green">
+              DATA
+            </span>
+            DARI BEBERAPA JURNAL
+          </div>
+        </div>
+      </button>
+      <div class="divider"></div>
+      <button class="button opensans animate-right fade-in" id="2" onclick="nomor2()">
+        <div style="display: flex;">
+          <div style="width: 25%; align-items: center; margin-right: 10px;" class="size2">02</div>
+          <div style="width: 75%; margin-left: 10px;" class="size1">
+            <span class="green">PENDEKATAN</span>
+            MAKANAN SEHAT
+          </div>
+        </div>
+      </button>
+      <div class="divider"></div>
+      <button class="button opensans animate-right fade-in" id="3" onclick="nomor3()">
+        <div style="display: flex;">
+          <div style="width: 25%; align-items: center; margin-right: 10px;" class="size2">03</div>
+          <div style="width: 75%; margin-left: 10px;" class="size1">
+            KONSISTENSI
+            <span class="green">GAYA HIDUP</span>
+            YANG SEHAT
+          </div>
+        </div>
+      </button>
+      <div class="divider"></div>
+      <button class="button opensans animate-right fade-in" id="4" onclick="nomor4()">
+        <div style="display: flex;">
+          <div style="width: 25%; align-items: center; margin-right: 10px;" class="size2">04</div>
+          <div style="width: 75%; margin-left: 10px;" class="size1">
+            REFERENSI YANG
+            <span class="green">KAMI</span>
+            GUNAKAN
+          </div>
+        </div>
+      </button>
+      <div class="divider"></div>
+      <br>
+      <div class="animate-right fade-in">
+        <a href="https://saweria.co/dekukun" class="small" id="5">SUPPORT US</a>
+      </div>
+    </center>
+    <script>
+      const elements = document.querySelectorAll('.animate-right, .fade-in');
+
+      let delay = 0;
+
+      elements.forEach(element => {
+        setTimeout(() => {
+          element.style.opacity = 1;
+          element.style.transform = 'translateX(0)';
+        }, delay);
+        delay += 400;
+      });
+
+      function nomor1(){
+        window.location.href = "nomor1.html"
+      }
+
+      function nomor2(){
+        window.location.href = "nomor2.html"
+      }
+
+      function nomor3(){
+        window.location.href = "nomor3.html"
+      }
+
+      function nomor4(){
+        window.location.href = "nomor4.html"
+      }
+    </script>
+</body>
+
+</html>
+</div>

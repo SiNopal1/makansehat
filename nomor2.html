@@ -82,6 +82,10 @@
         body {
             padding: 1rem;
         }
+
+        .dividers{
+            margin: 5px 0;
+        }
     </style>
 </head>
 
@@ -90,6 +94,13 @@
         <button class="button opensans animate-right fade-in" id="1">
             Cara Makan Sehat?
         </button>
+        <div class="dividers"></div>
+        <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="15" aria-valuemin="0"
+              aria-valuemax="100" id="proses1"></div>
+            <div class="progress-bar bg-black" role="progressbar" style="width: 100%;" aria-valuenow="30" aria-valuemin="0"
+              aria-valuemax="100" id="proses2"></div>
+        </div>
         <div class="divider"></div>
         <div class="divider"></div>
         <div class="divider"></div>
@@ -100,12 +111,6 @@
         <img src="aset/down-arrow.png" alt="" height="50" width="50" onclick="down()">
         <div class="divider2"></div>
         <img src="aset/a1.png" alt="" height="150" id="gambaran">
-        <div class="progress">
-            <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="15" aria-valuemin="0"
-              aria-valuemax="100" id="proses1"></div>
-            <div class="progress-bar bg-black" role="progressbar" style="width: 100%;" aria-valuenow="30" aria-valuemin="0"
-              aria-valuemax="100" id="proses2"></div>
-        </div>
     </center>
     <script>
         const elements = document.querySelectorAll('.animate-right, .fade-in');
